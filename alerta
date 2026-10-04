@@ -1,0 +1,24 @@
+<style>
+  /* Deshabilita la selección de texto */
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+
+<script>
+  // Inhabilita el clic derecho
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Inhabilita atajos como F12, Ctrl+C, Ctrl+U, Ctrl+Shift+I
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || 
+       (e.ctrlKey && e.shiftKey && e.keyCode == 73) || 
+       (e.ctrlKey && e.keyCode == 67) || 
+       (e.ctrlKey && e.keyCode == 85)) {
+      return false;
+    }
+  };
+</script>
